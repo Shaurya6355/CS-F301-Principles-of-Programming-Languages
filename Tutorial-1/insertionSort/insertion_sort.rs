@@ -22,9 +22,9 @@ fn insertion_sort(arr: &mut [usize]) {
 }
 
 fn main() {
-    const START_SIZE: usize = 1000;
-    const END_SIZE: usize = 10000;
-    const STEP_SIZE: usize = 1000;
+    const START_SIZE: usize = 10000;
+    const END_SIZE: usize = 100000;
+    const STEP_SIZE: usize = 10000;
 
     for list_size in (START_SIZE..=END_SIZE).step_by(STEP_SIZE) {
         let mut numbers = create_array(list_size);

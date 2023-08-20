@@ -22,7 +22,7 @@ void merge_sort_helper(std::vector<int>& arr, int left, int right) {
     
     //WRITE YOUR CODE HERE
 
-    
+
 }
 
 void merge_sort(std::vector<int>& arr) {
