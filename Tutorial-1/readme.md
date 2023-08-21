@@ -111,5 +111,45 @@ Use the above code for printing a vector.
 This is the formatting placeholder that tells Rust to print the value using its "Debug" format. The :? indicates that Rust should use the Debug trait implementation for formatting the value.
 ## C++
 
+### Vector
+```C++
+#include <iostream>
+#include <vector>
+
+int main() {
+    // Declare a vector to store strings
+    std::vector<std::string> names;
+
+    // Add elements to the vector using push_back
+    names.push_back("Alice");
+    names.push_back("Bob");
+    names.push_back("Charlie");
+
+    // Access elements by index
+    std::cout << "Second name: " << names[1] << std::endl;
+
+    // Get the size of the vector
+    std::cout << "Vector size: " << names.size() << std::endl;
+
+    // Iterate through the vector using an iterator
+    std::cout << "Names: ";
+    for (const std::string &name : names) {
+        std::cout << name << " ";
+    }
+    std::cout << std::endl;
+
+    // Clear the vector
+    names.clear();
+
+    // Check if the vector is empty
+    if (names.empty()) {
+        std::cout << "Vector is empty." << std::endl;
+    }
+
+    return 0;
+}
+
+```
+Example code for using the Vector STL in C++
 
 
