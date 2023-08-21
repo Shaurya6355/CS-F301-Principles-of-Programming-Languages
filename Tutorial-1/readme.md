@@ -101,7 +101,7 @@ fn main() {
     }
 }
 ```
-The above snippet demonstartes a **for loop** for printing numbers from 1 to 5.
+The above snippet demonstrates a **for loop** for printing numbers from 1 to 5.
 
 ### Printing
 ```RUST
