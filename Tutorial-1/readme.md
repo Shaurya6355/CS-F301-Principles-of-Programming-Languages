@@ -1,6 +1,6 @@
 # Tutorial - 1
 
-## Welcome to first Tutorial for CS F301!
+## Welcome to the First Tutorial for CS F301!
 In this Tutorial we are going to explore the differences between C++ and Rust in terms of Ownership and Memory Allocation Concepts.
 
 ## Introduction
@@ -33,6 +33,14 @@ The tutorial only asks you to write some very basic code and we have provided so
 ### Anatomy of a RUST Program
 
 ```RUST
+fn function_name(parameters: Type) -> Return_Type {
+    // Function body
+    // ...
+    // Optional: Return a value using the `return` keyword
+}
+```
+
+```RUST
 fn main()
 {
   println!("Hello World");
@@ -60,7 +68,47 @@ fn main() {
 }
 ```
 
-The first code snippet will give a compile time error. This is because variable in RUST are by default immutable. This means you cannot reassign any values to the same variable. however you can change this behavior of the variables by using the  mut keyword, as described by the second code snippet.
+The first code snippet will give a compile time error. This is because variable in RUST are by default immutable. This means you cannot reassign any values to the same variable. However you can change this behavior of the variables by using the  mut keyword, as described by the second code snippet.
+
+### Creating Vectors
+
+```RUST
+let mut my_vector: Vec<i32> = Vec::with_capacity(5);
+```
+
+The above code snipped defines a vector of datatype Vec<i32>, which means it's a vector that holds 32-bit signed integers (i32). The with_capacity(size) function creates a new vector with an initial capacity specified by size.
+
+```RUST
+my_vector.push(element);
+```
+The push() function is used to add elements to the vector. 
+
+### FOR Loop
+
+```RUST
+for variable in start..end {
+    // Loop body
+}
+```
+
+The **variable** represents the current value of the loop as you iterate through the range.
+start(inclusive) and end(exclusive) represent the range for the loop.
+
+```RUST
+fn main() {
+    for number in 1..6 {
+        println!("The number is: {}", number);
+    }
+}
+```
+The above snippet demonstartes a **for loop** for printing numbers from 1 to 5.
+
+### Printing
+```RUST
+ println!("{:?}", my_vector);
+```
+Use the above code for printing a vector.
+This is the formatting placeholder that tells Rust to print the value using its "Debug" format. The :? indicates that Rust should use the Debug trait implementation for formatting the value.
 ## C++
 
 
