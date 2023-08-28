@@ -16,26 +16,27 @@ Imagine you have a box. Inside the box, you put a number. In Rust, when you make
 In Rust, lifetimes help the compiler understand how long references to data are valid. They ensure that references don't outlive the data they point to, preventing dangling references and memory safety issues.
 
 ```RUST
-fn main() {
-    let value = 42; // A variable named 'value'
-
-    let result; // A variable to hold the result of the reference
-    {
-        let reference = &value; // A reference to 'value'
-        result = add_one(reference); // Pass the reference to the function
-    } // 'reference' goes out of scope here, but 'result' still lives
-
-    println!("Result: {}", result); // 'result' is still valid here
-}
-
-fn add_one(input: &i32) -> i32 {
-    input + 1 // Return the incremented value
-}
+fn print_data(data: &str) {
+    println!("{}", data);
+} // 'data' goes out of scope here
 
 ```
+In this example, the data reference lives only within the scope of the function call. It would be incorrect to try to return this reference because the data it points to would become invalid as soon as the function ends.
 
-The lifetime of reference is limited by the inner block. It cannot be used outside of that block because it would refer to data that is no longer valid. This restriction helps avoid referencing data that has already been deallocated.
-By using lifetimes, Rust ensures that references are used safely and discarded when they should be. It's like having a conversation with the compiler to ensure that borrowed data is treated responsibly and doesn't outlive its usefulness.
+**Specifying Lifetime**
+```RUST
+fn longest<'a>(s1: &'a str, s2: &'a str) -> &'a str {
+    if s1.len() > s2.len() {
+        s1
+    } else {
+        s2
+    }
+}
+```
+In this function, the 'a notation indicates that the references s1 and s2 must have the same lifetime 'a. This ensures that the returned reference will be valid for the same duration as the input references.
+
+In summary, lifetimes are Rust's way of managing references to data, allowing the compiler to verify that references remain valid and preventing common memory-related errors. They're crucial for Rust's memory safety guarantees and its ability to provide high performance without sacrificing safety.
+
 
 ## Implementation
 This Next section is going to provide you with some basic starter code that will help you with todays tutorial. 
@@ -117,6 +118,20 @@ fn main() {
 ```
 The above snippet demonstrates a **for loop** for printing numbers from 1 to 5.
 
+### WHILE LOOP
+
+```RUST
+fn main() {
+    let mut count = 1; // Start from 1
+
+    while count <= 5 {
+        println!("Count: {}", count);
+        count += 1; // Increment count by 1
+    }
+}
+
+```
+The above snippet demonstrates a **while loop** for printing numbers from 1 to 5.
 ### Printing
 ```RUST
  println!("{:?}", my_vector);
