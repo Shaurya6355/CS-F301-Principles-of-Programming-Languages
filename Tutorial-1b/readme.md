@@ -1,7 +1,7 @@
 # Tutorial - 1
 
 ## Welcome to the First Tutorial for CS F301!
-In this Tutorial we are going to explore the differences between C++ and Rust in terms of Ownership and Memory Allocation Concepts.
+In this Tutorial we are going to explore the differences between C++ and Rust in terms of Mutability and Lifetime Concepts.
 
 ## Introduction
 Programming languages play a vital role in how we build software, and understanding how they handle memory and ownership is essential for writing safe and efficient code. Let's dive into the differences between C++ and Rust in this regard.
@@ -181,5 +181,13 @@ int main() {
 ```
 Example code for using the Vector STL in C++
 
+### Merge Function in Merge Sort
+The logic behind the merge function can be understood using the example of 2 sorted piles of cards
 
+1. You compare the top cards of both piles.
+2. You pick the card with the smaller number and put it into a new pile.
+3. Then, you look at the next card in the pile where you took the card from and compare it again with the card in the other pile.
+4. You keep doing this until you've taken all the cards from both piles and put them into the new pile in the right order.
+
+In this way, you're merging the two sorted piles into one bigger sorted pile. It's like sorting a big deck of cards by gradually combining smaller sorted piles.
 
