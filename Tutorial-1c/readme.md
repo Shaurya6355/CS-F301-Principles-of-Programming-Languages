@@ -1,7 +1,7 @@
 # Tutorial - 1
 
 ## Welcome to the First Tutorial for CS F301!
-In this Tutorial we are going to explore the differences between C++ and Rust in terms of the traits concept.
+In this Tutorial we are going to explore the differences between C++ and Rust in terms of the **Traits** concept.
 
 ## Introduction
 In the world of programming, traits are powerful abstractions that enable developers to define and enforce specific behaviors or capabilities for types, promoting code reusability and maintainability. Although the concept of traits exists in various programming languages, this tutorial will focus on how traits are implemented in two distinct languages: C++ and Rust.
@@ -56,7 +56,7 @@ fn main() {
 ```
 In the main function, we create a Circle instance and call the draw method on it. This will print "Drawing a circle with radius 3.0" to the console.
 
-###Polymorphism with Traits
+### Polymorphism with Traits
 One of the powerful features of traits is polymorphism. We can create different types that implement the same trait and use them interchangeably. Let's create another type, Rectangle, and make it drawable as well.
 
 ```RUST
@@ -235,14 +235,6 @@ int main() {
 ```
 Example code for using the Vector STL in C++
 
-### Merge Function in Merge Sort
-The logic behind the merge function can be understood using the example of 2 sorted piles of cards
 
-1. You compare the top cards of both piles.
-2. You pick the card with the smaller number and put it into a new pile.
-3. Then, you look at the next card in the pile where you took the card from and compare it again with the card in the other pile.
-4. You keep doing this until you've taken all the cards from both piles and put them into the new pile in the right order.
-
-In this way, you're merging the two sorted piles into one bigger sorted pile. It's like sorting a big deck of cards by gradually combining smaller sorted piles.
 
 
