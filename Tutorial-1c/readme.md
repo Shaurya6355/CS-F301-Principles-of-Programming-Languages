@@ -118,6 +118,31 @@ fn main()
 
 The main function is special: it is always the first code that runs in every executable Rust program. It is also important to note that println! is a RUST macro and not a function.Remember to end you statemnets with a semi colon. 
 
+### Accessing vectors defined in a struct
+Access the vector using the self keyword
+```RUST
+struct MyStruct {
+    my_vector: Vec<i32>,
+}
+
+impl MyStruct {
+    // Method to add an element to the vector
+    fn add_element(&mut self, value: i32) {
+        self.my_vector.push(value);
+    }
+
+    // Method to get the length of the vector
+    fn get_vector_length(&self) -> usize {
+        self.my_vector.len()
+    }
+
+    // Method to get a specific element from the vector
+    fn get_element(&self, index: usize) -> Option<&i32> {
+        self.my_vector.get(index)
+    }
+}
+```
+
 ### Variables and Mutability
 ```RUST
 fn main() {
