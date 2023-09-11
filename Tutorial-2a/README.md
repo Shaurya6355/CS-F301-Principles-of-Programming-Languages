@@ -99,9 +99,10 @@ In this composition, f is applied first, followed by g. When you call h x, it is
 ## Recursive Code Snippet
 
 ```Haskell
-sumList :: [Int] -> Int
-sumList [] = 0
-sumList (x:xs) = x + sumList xs
+-- Define a function to calculate the length of a list recursively
+listLength :: [a] -> Int
+listLength [] = 0
+listLength (x:xs) = 1 + listLength xs
 ```
 
 - :: [Int] -> Int specifies the type signature of the function.
