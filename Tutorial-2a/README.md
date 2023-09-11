@@ -96,7 +96,7 @@ In this composition, f is applied first, followed by g. When you call h x, it is
 
 **Note- sum is also a Haskell function so try to directly use it in your implementation** 
 
-## Recusive Code Snippet
+## Recursive Code Snippet
 
 ```Haskell
 sumList :: [Int] -> Int
