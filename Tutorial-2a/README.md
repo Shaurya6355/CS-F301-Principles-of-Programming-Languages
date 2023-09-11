@@ -113,3 +113,15 @@ listLength (x:xs) = 1 + listLength xs
     - x represents the first element of the list.
     - xs represents the remaining elements of the list (it's a list itself).
 
+## EXAMPLE PROGRAM
+```
+-- Define a function to compare two numbers and print a message using the | operator
+compareNumbers :: Int -> Int -> IO ()
+compareNumbers x y
+    | x < y     = putStrLn ("The first number (" ++ show x ++ ") is less than the second number (" ++ show y ++ ").")
+    | x > y     = putStrLn ("The first number (" ++ show x ++ ") is greater than the second number (" ++ show y ++ ").")
+    | x == y    = putStrLn ("The first number (" ++ show x ++ ") is equal to the second number (" ++ show y ++ ").")
+    | otherwise = putStrLn "Invalid input."
+```
+
+- :: Int -> Int -> IO() specifies the type signature of the function. This function takes two integer inputs and returns a string to the output console.
