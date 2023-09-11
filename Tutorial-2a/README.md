@@ -46,10 +46,19 @@ main = do
 - square is a function that takes an Int as an argument and returns an Int.
 - Functions are defined using the pattern functionName arguments = ...
 
-### Data.List.filter
-- Data.List.filter is a function from the Data.List module that takes two arguments: a predicate function and a list.
-- For example if the predicate function is even, which is a built-in Haskell function, it checks if an integer is even.
-- So in short Data.List.filter even takes a list of integers and filters it, keeping only the even integers.
+### Recursion
+```haskell
+-- Factorial function
+factorial :: Integer -> Integer
+factorial 0 = 1
+factorial n = n * factorial (n - 1)
+
+main :: IO ()
+main = do
+    let n = 5
+    putStrLn ("The factorial of " ++ show n ++ " is " ++ show (factorial n))
+```
+Simple Code snippet to explain how recursion is implemented in Haskell.
 
 ### Function Composition
 Function composition in Haskell is a powerful technique for combining two or more functions to create a new function. It allows you to chain functions together, passing the output of one function as the input to another. The syntax for function composition in Haskell uses the . (dot) operator. Here's how it works:
@@ -74,6 +83,17 @@ In this composition, f is applied first, followed by g. When you call h x, it is
 
 **Note- sum is also a Haskell function so try to directly use it in your implementation** 
 
-
-
+### Recusive Code Snippet
+```Haskell
+sumList :: [Int] -> Int
+sumList [] = 0
+sumList (x:xs) = x + sumList xs
+```
+- :: [Int] -> Int specifies the type signature of the function.
+    - It indicates that sumList takes a list of integers ([Int]) as input and returns an integer (Int) as the result.
+- The second line is a pattern matching clause that handles the case when the input list is empty ([]). It serves the purpose of a base case.
+- This clause handles the case when the input list is not empty and consists of at least one element.
+    - The pattern (x:xs) is used to destructure the list. It matches the head of the list (x) and the rest of the list (xs).
+    - x represents the first element of the list.
+    - xs represents the remaining elements of the list (it's a list itself).
 
