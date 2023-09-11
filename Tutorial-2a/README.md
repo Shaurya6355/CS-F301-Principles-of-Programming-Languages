@@ -1,7 +1,9 @@
 # Tutorial - 2
 
 ## Welcome to the Second Tutorial for CS F301!
-In this Tutorial we are going to 
+In this Tutorial we are going to explore the basic concepts about the Haskell Programing language.
+
+![Haskell](https://miro.medium.com/v2/resize:fit:1166/1*-DMa8q1JrW7CG6imgITacA.png)
 
 ## Introduction
 Haskell is a statically typed, purely functional programming language that was first developed in the late 1980s by a group of researchers led by Haskell Curry and Simon Peyton Jones. It is named after Haskell Curry, a mathematician and logician who made significant contributions to the field of combinatory logic and functional programming.
@@ -42,4 +44,36 @@ main = do
     putStrLn ("The square of " ++ show number ++ " is " ++ show (square number))
 ```
 - square is a function that takes an Int as an argument and returns an Int.
-- Functions are defined using the pattern functionName arguments = ..
+- Functions are defined using the pattern functionName arguments = ...
+
+### Data.List.filter
+- Data.List.filter is a function from the Data.List module that takes two arguments: a predicate function and a list.
+- For example if the predicate function is even, which is a built-in Haskell function, it checks if an integer is even.
+- So in short Data.List.filter even takes a list of integers and filters it, keeping only the even integers.
+
+### Function Composition
+Function composition in Haskell is a powerful technique for combining two or more functions to create a new function. It allows you to chain functions together, passing the output of one function as the input to another. The syntax for function composition in Haskell uses the . (dot) operator. Here's how it works:
+
+Suppose you have two functions:
+
+f :: A -> B
+
+g :: B -> C
+
+You can create a new function h by composing f and g such that h takes an argument of type A, applies f to it, and then applies g to the result to produce a value of type C. The syntax for function composition is as follows:
+
+```haskell
+h = g . f
+```
+Here's a breakdown of the syntax:
+
+. (dot) is the function composition operator.
+g and f are the functions being composed.
+h is the resulting composed function.
+In this composition, f is applied first, followed by g. When you call h x, it is equivalent to g (f x). The output of f x becomes the input to g.
+
+**Note- sum is also a Haskell function so try to directly use it in your implementation** 
+
+
+
+
