@@ -35,6 +35,11 @@ main = do
 - ++ is used for string concatenation.
 - 'show' converts a value to its string representation.
 
+## NOTE: To calculate mod in haskell, use the following syntax
+```Haskell
+x `mod` y
+```
+
 ## User Defined Functions
 Functions in Haskell follow the below syntax
 
