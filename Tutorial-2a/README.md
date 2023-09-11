@@ -105,7 +105,7 @@ In this composition, f is applied first, followed by g. When you call h x, it is
 
 ```Haskell
 -- Define a function to calculate the length of a list recursively
-listLength :: [a] -> Int
+listLength :: [Int] -> Int
 listLength [] = 0
 listLength (x:xs) = 1 + listLength xs
 ```
