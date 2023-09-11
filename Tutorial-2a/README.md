@@ -13,7 +13,7 @@ This Next section is going to provide you with some basic starter code that will
 **DO NOT WORRY if you have not used Haskell before**
 The tutorial only asks you to write some very basic code and we have provided some code in the following sections to help you out.
 
-### Main Function
+## Main Function
 ```Haskell
 main :: IO ()
 main = putStrLn "Hello, Haskell!"
@@ -32,7 +32,7 @@ main = do
 - ++ is used for string concatenation.
 - 'show' converts a value to its string representation.
 
-### User Defined Functions
+## User Defined Functions
 ```Haskell
 -- Function to calculate the square of a number
 square :: Int -> Int
@@ -46,7 +46,7 @@ main = do
 - square is a function that takes an Int as an argument and returns an Int.
 - Functions are defined using the pattern functionName arguments = ...
 
-### Recursion
+## Recursion
 ```haskell
 -- Factorial function
 factorial :: Integer -> Integer
@@ -60,7 +60,7 @@ main = do
 ```
 Simple Code snippet to explain how recursion is implemented in Haskell.
 
-### Function Composition
+## Function Composition
 Function composition in Haskell is a powerful technique for combining two or more functions to create a new function. It allows you to chain functions together, passing the output of one function as the input to another. The syntax for function composition in Haskell uses the . (dot) operator. Here's how it works:
 
 Suppose you have two functions:
@@ -83,7 +83,7 @@ In this composition, f is applied first, followed by g. When you call h x, it is
 
 **Note- sum is also a Haskell function so try to directly use it in your implementation** 
 
-### Recusive Code Snippet
+## Recusive Code Snippet
 ```Haskell
 sumList :: [Int] -> Int
 sumList [] = 0
