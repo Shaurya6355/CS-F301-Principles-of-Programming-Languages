@@ -14,10 +14,12 @@ This Next section is going to provide you with some basic starter code that will
 The tutorial only asks you to write some very basic code and we have provided some code in the following sections to help you out.
 
 ## Main Function
+
 ```Haskell
 main :: IO ()
 main = putStrLn "Hello, Haskell!"
 ```
+
 - main is the entry point for your Haskell program.
 - :: IO () specifies the type of main. It's an I/O action that performs some input/output operations.
 putStrLn is a function that prints a string to the console.
@@ -28,11 +30,19 @@ main = do
     let x = 5
     putStrLn ("The value of x is: " ++ show x)
 ```
+
 - let is used to declare a variable.
 - ++ is used for string concatenation.
 - 'show' converts a value to its string representation.
 
 ## User Defined Functions
+Functions in Haskell follow the below syntax
+
+```Haskell
+functionName :: TypeSignature
+functionName parameter1 parameter2 ... = functionBody
+```
+
 ```Haskell
 -- Function to calculate the square of a number
 square :: Int -> Int
@@ -43,10 +53,12 @@ main = do
     let number = 4
     putStrLn ("The square of " ++ show number ++ " is " ++ show (square number))
 ```
+
 - square is a function that takes an Int as an argument and returns an Int.
 - Functions are defined using the pattern functionName arguments = ...
 
 ## Recursion
+
 ```haskell
 -- Factorial function
 factorial :: Integer -> Integer
@@ -58,6 +70,7 @@ main = do
     let n = 5
     putStrLn ("The factorial of " ++ show n ++ " is " ++ show (factorial n))
 ```
+
 Simple Code snippet to explain how recursion is implemented in Haskell.
 
 ## Function Composition
@@ -84,11 +97,13 @@ In this composition, f is applied first, followed by g. When you call h x, it is
 **Note- sum is also a Haskell function so try to directly use it in your implementation** 
 
 ## Recusive Code Snippet
+
 ```Haskell
 sumList :: [Int] -> Int
 sumList [] = 0
 sumList (x:xs) = x + sumList xs
 ```
+
 - :: [Int] -> Int specifies the type signature of the function.
     - It indicates that sumList takes a list of integers ([Int]) as input and returns an integer (Int) as the result.
 - The second line is a pattern matching clause that handles the case when the input list is empty ([]). It serves the purpose of a base case.
