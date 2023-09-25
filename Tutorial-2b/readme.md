@@ -158,5 +158,5 @@ main = do
     print list2
 
 ```
-We create a list list1 using the : operator. We start with an empty list ([]) and use : to add elements to it. So, 1 : 2 : 3 : [] is equivalent to [1, 2, 3].
+We create a list list1 using the : operator. We start with an empty list ([]) and use : to add elements to it. So, 1 : 2 : 3 : [] is equivalent to [1, 2, 3] .
 
