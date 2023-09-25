@@ -160,3 +160,6 @@ main = do
 ```
 We create a list list1 using the : operator. We start with an empty list ([]) and use : to add elements to it. So, 1 : 2 : 3 : [] is equivalent to [1, 2, 3] .
 
+## ++ Operator
+++ is the list concatenation operator in Haskell. It is used to concatenate two lists together.
+
