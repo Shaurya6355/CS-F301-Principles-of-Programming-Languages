@@ -163,3 +163,15 @@ We create a list list1 using the : operator. We start with an empty list ([]) an
 ## ++ Operator
 ++ is the list concatenation operator in Haskell. It is used to concatenate two lists together.
 
+## Guard Operator |
+```Haskell
+grade :: Int -> String
+grade score
+    | score >= 90 = "A"
+    | score >= 80 = "B"
+    | score >= 70 = "C"
+    | score >= 60 = "D"
+    | otherwise   = "F"
+```
+In this example, the grade function takes an integer score as input and uses guards to determine the corresponding letter grade based on the value of score. Depending on the value of score, different conditions are checked, and the appropriate letter grade is returned as the result. If none of the conditions match (otherwise), an "F" is returned as the default result.
+
