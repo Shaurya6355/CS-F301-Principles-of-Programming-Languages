@@ -131,3 +131,32 @@ compareNumbers x y
 
 - :: Int -> Int -> IO() specifies the type signature of the function. This function takes two integer inputs and returns a string to the output console.
 
+## : List Operator
+The : operator in Haskell is used to construct a new list by adding an element to the front (head) of an existing list. This operation is often called "cons" and is a fundamental operation for building and manipulating lists in Haskell.
+
+Here's how the : operator works:
+- It takes an element (e.g., an integer, character, etc.) on the left and a list on the right.
+- It creates a new list with the element added to the front of the existing list.
+- The result is a new list that includes the element followed by the original list's elements.
+
+```haskell
+module Main where
+
+main :: IO ()
+main = do
+    -- Create a list by consing elements
+    let list1 = 1 : 2 : 3 : []  -- Equivalent to [1, 2, 3]
+    
+    -- Add an element to an existing list
+    let list2 = 0 : list1     -- Adds 0 to the front of list1
+    
+    -- Display the lists
+    putStrLn "list1:"
+    print list1
+    
+    putStrLn "list2:"
+    print list2
+
+```
+We create a list list1 using the : operator. We start with an empty list ([]) and use : to add elements to it. So, 1 : 2 : 3 : [] is equivalent to [1, 2, 3].
+
