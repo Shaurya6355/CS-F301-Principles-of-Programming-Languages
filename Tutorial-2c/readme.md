@@ -55,7 +55,7 @@ always42 _ = 42
 ```
 In this example, _ is used as a placeholder for an argument that is ignored. The function always42 always returns 42, regardless of the type or value of the input argument.
 
-## Head and Tail
+## Head 
 The head function is used to extract the first element of a list.
 
 ```Haskell
@@ -63,14 +63,7 @@ let myList = [1, 2, 3, 4, 5]
 let firstElement = head myList -- firstElement will be 1
 ```
 
-The tail function is used to extract all elements of a list except the first one.
-
-```Haskell
-let myList = [1, 2, 3, 4, 5]
-let restOfList = tail myList -- restOfList will be [2, 3, 4, 5]
-```
-
-Keep in mind that both head and tail operate on non-empty lists, so it's essential to check for empty lists or use them in situations where you can guarantee that the list is not empty.
+Keep in mind that head operates on non-empty lists, so it's essential to check for empty lists or use it in a situations where you can guarantee that the list is not empty.
 
 ## User Defined Functions
 Functions in Haskell follow the below syntax
@@ -110,28 +103,6 @@ main = do
 
 Simple Code snippet to explain how recursion is implemented in Haskell.
 
-## Function Composition
-Function composition in Haskell is a powerful technique for combining two or more functions to create a new function. It allows you to chain functions together, passing the output of one function as the input to another. The syntax for function composition in Haskell uses the . (dot) operator. Here's how it works:
-
-Suppose you have two functions:
-
-f :: A -> B
-
-g :: B -> C
-
-You can create a new function h by composing f and g such that h takes an argument of type A, applies f to it, and then applies g to the result to produce a value of type C. The syntax for function composition is as follows:
-
-```haskell
-h = g . f
-```
-Here's a breakdown of the syntax:
-
-. (dot) is the function composition operator.
-g and f are the functions being composed.
-h is the resulting composed function.
-In this composition, f is applied first, followed by g. When you call h x, it is equivalent to g (f x). The output of f x becomes the input to g.
-
-**Note- sum is also a Haskell function so try to directly use it in your implementation** 
 
 ## Recursive Code Snippet
 
