@@ -44,6 +44,34 @@ let myList = [1, 2, 3, 4, 5]
 count = length myList -- Result: 5
 
 ```
+
+
+## Wildcard
+In Haskell, the underscore character _ is often used as a wildcard or placeholder for values that you don't intend to use or names that you want to ignore. 
+```Haskell
+-- A function that returns 42 regardless of its argument
+always42 :: a -> Int
+always42 _ = 42
+```
+In this example, _ is used as a placeholder for an argument that is ignored. The function always42 always returns 42, regardless of the type or value of the input argument.
+
+## Head and Tail
+The head function is used to extract the first element of a list.
+
+```Haskell
+let myList = [1, 2, 3, 4, 5]
+let firstElement = head myList -- firstElement will be 1
+```
+
+The tail function is used to extract all elements of a list except the first one.
+
+```Haskell
+let myList = [1, 2, 3, 4, 5]
+let restOfList = tail myList -- restOfList will be [2, 3, 4, 5]
+```
+
+Keep in mind that both head and tail operate on non-empty lists, so it's essential to check for empty lists or use them in situations where you can guarantee that the list is not empty.
+
 ## User Defined Functions
 Functions in Haskell follow the below syntax
 
