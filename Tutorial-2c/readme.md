@@ -13,33 +13,37 @@ This Next section is going to provide you with some basic starter code that will
 **DO NOT WORRY if you have not used Haskell before**
 The tutorial only asks you to write some very basic code and we have provided some code in the following sections to help you out.
 
-## Main Function
+## List Indexing (!!)
+In Haskell, the !! operator is used for list indexing. It allows you to access elements at specific positions in a list
 
 ```Haskell
-main :: IO ()
-main = putStrLn "Hello, Haskell!"
+myList :: [Int]
+myList = [1, 2, 3, 4, 5]
+
+elementAtIndex2 :: Int
+elementAtIndex2 = myList !! 2 -- This will be 3, as it's the element at index 2.
+
 ```
 
-- main is the entry point for your Haskell program.
-- :: IO () specifies the type of main. It's an I/O action that performs some input/output operations.
-putStrLn is a function that prints a string to the console.
+Keep in mind that (!!) is a partial function, meaning that it assumes the index you provide is within the bounds of the list. If you attempt to access an index that is out of bounds (e.g., an index greater than or equal to the length of the list), it will result in a runtime error. 
+
+## Drop Keyword
+In Haskell, the drop function is used to remove a specified number of elements from the beginning of a list and return the remaining elements as a new list.
 
 ```Haskell
-main :: IO ()
-main = do
-    let x = 5
-    putStrLn ("The value of x is: " ++ show x)
+-- Drop the first 3 elements from a list
+result = drop 3 [1, 2, 3, 4, 5] -- Result: [4, 5]
 ```
 
-- let is used to declare a variable.
-- ++ is used for string concatenation.
-- 'show' converts a value to its string representation.
+## Length keyword
+In Haskell, the length function is used to determine the number of elements in a list. 
 
-## NOTE: To calculate mod in haskell, use the following syntax
 ```Haskell
-x `mod` y
-```
+-- Count the number of elements in a list
+let myList = [1, 2, 3, 4, 5]
+count = length myList -- Result: 5
 
+```
 ## User Defined Functions
 Functions in Haskell follow the below syntax
 
