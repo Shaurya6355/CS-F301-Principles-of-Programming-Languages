@@ -178,3 +178,10 @@ grade score
 ```
 In this example, the grade function takes an integer score as input and uses guards to determine the corresponding letter grade based on the value of score. Depending on the value of score, different conditions are checked, and the appropriate letter grade is returned as the result. If none of the conditions match (otherwise), an "F" is returned as the default result.
 
+## Mod 
+In Haskell, the modulus operation is performed using the % operator. However, Haskell uses mod as the actual function to calculate the modulus.
+
+```Haskell
+result = x `mod` y
+```
+
