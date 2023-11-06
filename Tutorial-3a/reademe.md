@@ -57,7 +57,7 @@ val selectedCard = Uniform(deckOfCards.map(Constant(_)): _*)
 ---
 
 # Conditional Probability
-You can express conditional probability using constructs like If, Chain, and CPD (Conditional Probability Distribution). These allow you to define dependencies between random variables.
+You can express conditional probability using constructs like IF, Chain, and CPD (Conditional Probability Distribution). These allow you to define dependencies between random variables.
 
 ## IF 
 The If element is used to create a random variable that depends on a condition. If the condition is true, the random variable takes on the value specified in the thenBranch; otherwise, it takes on the value specified in the elseBranch.
