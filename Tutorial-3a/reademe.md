@@ -46,4 +46,50 @@ val selectedCard = Uniform(deckOfCards.map(Constant(_)): _*)
 //In this example, selectedCard represents a random choice from a standard deck of cards. Each card in the deck is an option, and they all have equal probabilities of being selected.
 ```
 
+### Conditional Probability
+You can express conditional probability using constructs like If, Chain, and CPD (Conditional Probability Distribution). These allow you to define dependencies between random variables.
+
+- **IF** The If element is used to create a random variable that depends on a condition. If the condition is true, the random variable takes on the value specified in the thenBranch; otherwise, it takes on the value specified in the elseBranch.
+```Scala
+import com.cra.figaro.language._
+import com.cra.figaro.library.atomic._
+
+// Define a random variable for a student's grade
+val passedExam = Flip(0.7)
+
+// Define an If element to model the student's grade
+val grade = If(passedExam, Constant("A"), Constant("F"))
+
+// Observe the grade
+grade.observe("A")
+
+
+//In this example, the random variable grade depends on whether the student passed the exam (passedExam). If the student passed (true), the grade is "A"; otherwise, it's "F."
+```
+
+- **CPD** (Conditional Probability Distribution) element is used to define conditional dependencies between multiple parent random variables and a child random variable. It represents a probability distribution for the child variable based on the combinations of parent variable values.
+
+```Scala
+import com.cra.figaro.language._
+import com.cra.figaro.library.compound._
+
+// Define a random variable for the weather
+val weather = Select(0.3 -> "Sunny", 0.4 -> "Cloudy", 0.3 -> "Rainy")
+
+// Define a CPD to model the probability of a person's mood based on the weather
+val mood = CPD(weather,
+  "Sunny" -> Select(0.6 -> "Happy", 0.4 -> "Content"),
+  "Cloudy" -> Select(0.4 -> "Content", 0.6 -> "Sad"),
+  "Rainy" -> Select(0.2 -> "Sad", 0.8 -> "Grumpy")
+)
+
+// Observe the person's mood
+mood.observe("Happy")
+
+```
+mood: This is the random variable representing a person's mood. It depends on the weather variable. The CPD specifies the probabilities of different moods based on the current weather conditions.
+
+If it's "Sunny," there's a 60% chance of being "Happy" and a 40% chance of being "Content."
+If it's "Cloudy," there's a 40% chance of being "Content" and a 60% chance of being "Sad."
+If it's "Rainy," there's a 20% chance of being "Sad" and an 80% chance of being "Grumpy."
 
