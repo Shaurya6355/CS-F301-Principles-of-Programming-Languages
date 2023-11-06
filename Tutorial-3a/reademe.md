@@ -5,6 +5,10 @@ In this Tutorial we are going to explore the basic concepts about Figaro.
 
 ![Figaro](https://b3069131.smushcdn.com/3069131/wp-content/uploads/2020/12/Core_R_D_Figaro_teaser.jpg?lossy=1&strip=1&webp=1)
 
+<div style="text-align:center;">
+  <img src="https://b3069131.smushcdn.com/3069131/wp-content/uploads/2020/12/Core_R_D_Figaro_teaser.jpg?lossy=1&strip=1&webp=1" alt="Your Image" width="100%">
+</div>
+
 # Introduction
 Figaro is a probabilistic programming framework for the Scala programming language. It's designed to simplify the development of probabilistic models and to perform probabilistic inference in a straightforward and efficient manner. Figaro facilitates this by allowing developers to create and manipulate probabilistic models in a declarative way.
 
