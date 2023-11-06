@@ -85,23 +85,22 @@ CPD (Conditional Probability Distribution) element is used to define conditional
 import com.cra.figaro.language._
 import com.cra.figaro.library.compound._
 
-// Define a random variable for the weather
-val weather = Select(0.3 -> "Sunny", 0.4 -> "Cloudy", 0.3 -> "Rainy")
+// Define random variables for the parent variables A, B, and C
+val A = Flip(0.3)
+val B = Select(0.2 -> 'X', 0.8 -> 'Y')
+val C = Constant('Z')
 
-// Define a CPD to model the probability of a person's mood based on the weather
-val mood = CPD(weather,
-  "Sunny" -> Select(0.6 -> "Happy", 0.4 -> "Content"),
-  "Cloudy" -> Select(0.4 -> "Content", 0.6 -> "Sad"),
-  "Rainy" -> Select(0.2 -> "Sad", 0.8 -> "Grumpy")
+// Define a CPD for a child variable D based on the values of A, B, and C
+val D = CPD(A, B, C,
+  (false, 'X', 'Z') -> Flip(0.1),
+  (false, 'X', 'Z') -> Flip(0.9),
+  (true, 'X', 'Z') -> Flip(0.4),
+  (true, 'Y', 'Z') -> Flip(0.7),
+  (true, 'Y', 'Z') -> Flip(0.3)
 )
 
-// Observe the person's mood
-mood.observe("Happy")
+// Observe the result of D
+D.observe(true)
 
 ```
-mood: This is the random variable representing a person's mood. It depends on the weather variable. The CPD specifies the probabilities of different moods based on the current weather conditions.
-
-If it's "Sunny," there's a 60% chance of being "Happy" and a 40% chance of being "Content."
-If it's "Cloudy," there's a 40% chance of being "Content" and a 60% chance of being "Sad."
-If it's "Rainy," there's a 20% chance of being "Sad" and an 80% chance of being "Grumpy."
-
+The CPD specifies the conditional probabilities for different combinations of parent variable values and maps them to the probability of the child variable D being true. In this example, the CPD depends on the values of A, B, and C, and there are five different conditional probabilities defined based on different combinations of the parent values.
