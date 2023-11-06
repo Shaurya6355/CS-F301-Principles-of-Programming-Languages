@@ -3,7 +3,7 @@
 # Welcome to the Third Tutorial for CS F301!
 In this Tutorial we are going to explore the basic concepts about Figaro.
 
-![Figaro](https://b3069131.smushcdn.com/3069131/wp-content/uploads/2020/12/Core_R_D_Figaro_teaser.jpg?lossy=1&strip=1&webp=1)
+<!--[Figaro](https://b3069131.smushcdn.com/3069131/wp-content/uploads/2020/12/Core_R_D_Figaro_teaser.jpg?lossy=1&strip=1&webp=1)-->
 
 <div style="text-align:center;">
   <img src="https://b3069131.smushcdn.com/3069131/wp-content/uploads/2020/12/Core_R_D_Figaro_teaser.jpg?lossy=1&strip=1&webp=1" alt="Your Image" width="100%">
