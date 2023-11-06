@@ -14,7 +14,7 @@ Figaro is a probabilistic programming framework for the Scala programming langua
 In Figaro, you define random variables using elements like Constant, Uniform, Select, Flip, etc. These elements represent probabilistic variables with specific probability distributions.
 
 - **Flip** is one of the simplest elements in Figaro, representing a Boolean random variable. It models a binary outcome, such as a coin flip, where the probability of the outcome being true (e.g., heads) is specified by the parameter p.
-```Figaro
+```Scala
 import com.cra.figaro.language._
 
 // Define a random variable representing a coin flip
