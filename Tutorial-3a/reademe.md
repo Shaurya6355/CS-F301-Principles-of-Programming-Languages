@@ -46,6 +46,8 @@ val selectedCard = Uniform(deckOfCards.map(Constant(_)): _*)
 //In this example, selectedCard represents a random choice from a standard deck of cards. Each card in the deck is an option, and they all have equal probabilities of being selected.
 ```
 
+---
+
 ### Conditional Probability
 You can express conditional probability using constructs like If, Chain, and CPD (Conditional Probability Distribution). These allow you to define dependencies between random variables.
 
