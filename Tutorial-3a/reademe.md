@@ -23,7 +23,7 @@ val coinFlip = Flip(0.5)
 ```
 
 - **Select** is used to create a random choice among a set of options, each associated with a specified probability. It's like a weighted coin flip with multiple outcomes.
-```Figaro
+```Scala
 // Define a random variable for selecting a color
 val color = Select(0.2 -> "Red", 0.5 -> "Green", 0.3 -> "Blue")
 
@@ -31,14 +31,14 @@ val color = Select(0.2 -> "Red", 0.5 -> "Green", 0.3 -> "Blue")
 ```
 
 - **Constant** represents a deterministic, non-random variable. It's used to model known, fixed values or constants in your probabilistic model.
-```Figaro
+```Scala
 // Define a constant representing the acceleration due to gravity
 val gravity = Constant(9.81)
 
 ```
 
 - The **Uniform** element in Figaro represents a probabilistic choice among a set of options, where each option is equally likely to be chosen. It is often used when you have a collection of values, and you want to model a random choice from that collection with uniform probabilities.
-```Figaro
+```Scala
 // Define a random variable for selecting a card from a deck of cards (uniformly)
 val deckOfCards = List("Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King")
 val selectedCard = Uniform(deckOfCards.map(Constant(_)): _*)
