@@ -15,8 +15,26 @@ Figaro is a probabilistic programming framework for the Scala programming langua
 # Implementation
 
 ## Defining Random Variables
-In Figaro, you define random variables using elements like Constant, Uniform, Select, Flip, etc. These elements represent probabilistic variables with specific probability distributions.
+In Scala, the type inference system allows you to define Figaro elements without explicitly specifying data types. However, when working with Figaro, you often need to be aware of the type of the element you're creating, such as Element[Int] for a probabilistic element representing an integer.
+```Scala
+import com.cra.figaro.language._
+import com.cra.figaro.library.compound._
 
+object BallDrawExample {
+  def main(args: Array[String]): Unit = {
+    // Define a bag with colored balls
+    val ballColors: List[String] = List("Red", "Green", "Blue", "Yellow")
+    
+    // Define an element representing the color of a randomly drawn ball
+    val drawnBallColor: Element[String] = Uniform(ballColors: _*)
+
+    // Sample and print the outcome of the drawn ball color
+    val sampledColor: String = drawnBallColor.sample()
+    println(s"The color of the drawn ball: $sampledColor")
+  }
+}
+
+```
 ## Flip 
 Flip is one of the simplest elements in Figaro, representing a Boolean random variable. It models a binary outcome, such as a coin flip, where the probability of the outcome being true (e.g., heads) is specified by the parameter p.
 ```Scala
@@ -52,6 +70,27 @@ val deckOfCards = List("Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jac
 val selectedCard = Uniform(deckOfCards.map(Constant(_)): _*)
 
 //In this example, selectedCard represents a random choice from a standard deck of cards. Each card in the deck is an option, and they all have equal probabilities of being selected.
+```
+
+## Repeat
+The Repeat structure in Figaro allows you to model scenarios where an experiment or event is repeated multiple times. It's particularly useful for capturing the variability and uncertainty in outcomes over a sequence of repetitions.
+```Scala
+import com.cra.figaro.language._
+import com.cra.figaro.library.compound._
+
+object CoinFlipRepeatExample {
+  def main(args: Array[String]): Unit = {
+    // Define a biased coin with a 60% chance of heads
+    val biasedCoin: Element[String] = Select(0.6 -> "Heads", 0.4 -> "Tails")
+
+    // Repeat the coin flip experiment 5 times
+    val repeatedCoinFlips: Element[List[String]] = Repeat(5, List(biasedCoin))
+
+    // Sample and print the outcomes of the repeated coin flips
+    val sampledOutcomes: List[String] = repeatedCoinFlips.sample()
+    println(s"Sampled outcomes of 5 coin flips: $sampledOutcomes")
+  }
+}
 ```
 
 ---
