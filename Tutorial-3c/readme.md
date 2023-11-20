@@ -123,6 +123,8 @@ object DiceRollExample {
 ```
 Apply(die1, die2, (d1: Int, d2: Int) => d1 + d2) combines die1 and die2 elements using the function (d1: Int, d2: Int) => d1 + d2.
 The function takes the values obtained from die1 and die2 as arguments and returns their sum as a new probabilistic element (sumOfDiceRolls).
+
+
 ---
 
 # Conditional Probability
