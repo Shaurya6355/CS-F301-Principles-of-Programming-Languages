@@ -92,7 +92,37 @@ object CoinFlipRepeatExample {
   }
 }
 ```
+## List.fill()
+The List.fill() method in Scala is used to create a new List by repeating a value or generating elements based on a function a specified number of times. It takes two parameters: the number of times to repeat or generate elements (n) and either a single value or a function to create the elements.
+```Scala
+val filledList: List[Int] = List.fill(5)(10)
+// Result: List(10, 10, 10, 10, 10)
+```
 
+## Apply Function
+
+```Scala
+import com.cra.figaro.language._
+import com.cra.figaro.library.compound._
+
+object DiceRollExample {
+  def main(args: Array[String]): Unit = {
+    // Define two dice roll elements
+    val die1: Element[Int] = Discrete(1 -> 1, 2 -> 2, 3 -> 3, 4 -> 4, 5 -> 5, 6 -> 6)
+    val die2: Element[Int] = Discrete(1 -> 1, 2 -> 2, 3 -> 3, 4 -> 4, 5 -> 5, 6 -> 6)
+
+    // Create a new element representing the sum of the two dice rolls using Apply
+    val sumOfDiceRolls: Element[Int] = Apply(die1, die2, (d1: Int, d2: Int) => d1 + d2)
+
+    // Sample and print the outcome of the sum of dice rolls
+    val sampledSum: Int = sumOfDiceRolls.sample()
+    println(s"The sum of two dice rolls is: $sampledSum")
+  }
+}
+
+```
+Apply(die1, die2, (d1: Int, d2: Int) => d1 + d2) combines die1 and die2 elements using the function (d1: Int, d2: Int) => d1 + d2.
+The function takes the values obtained from die1 and die2 as arguments and returns their sum as a new probabilistic element (sumOfDiceRolls).
 ---
 
 # Conditional Probability
